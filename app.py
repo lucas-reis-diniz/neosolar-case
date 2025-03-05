@@ -2,10 +2,9 @@ import requests
 import pandas as pd
 from itertools import product
 
-# URL da lista de produtos (Anexo A)
 URL_PRODUTOS = 'https://case-1sbzivi17-henriques-projects-2cf452dc.vercel.app'
 
-# Função para buscar os produtos disponíveis
+# buscar os produtos disponíveis
 def buscar_produtos():
     response = requests.get(URL_PRODUTOS)
     if response.status_code == 200:
@@ -14,11 +13,11 @@ def buscar_produtos():
         print(f"Erro ao buscar produtos: {response.status_code}")
         return []
 
-# Filtrando produtos por categoria
+# filtra produtos por categoria
 def filtrar_produtos(produtos, categoria):
     return [p for p in produtos if p['Categoria'] == categoria]
 
-# Gera combinações possíveis entre os produtos
+# gera combinações possíveis entre os produtos
 def gerar_combinacoes(pa, inv, ctrl):
     combinacoes = []
     for p in pa:
@@ -28,7 +27,7 @@ def gerar_combinacoes(pa, inv, ctrl):
                     combinacoes.append((p, i, c))
     return combinacoes
 
-# Cria DataFrame final
+# DataFrame final
 def criar_dataframe(combinacoes):
     geradores = []
     id_gerador = 11111
@@ -48,6 +47,6 @@ if __name__ == "__main__":
     combinacoes = gerar_combinacoes(paineis, inversores, controladores)
     df = criar_dataframe(combinacoes)
 
-    # Salva o CSV
+    # CSV
     df.to_csv("geradores_configurados.csv", index=False)
     print(f"{len(combinacoes)} geradores configurados salvos em 'geradores_configurados.csv'")
