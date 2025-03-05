@@ -1,0 +1,10 @@
+ID Gerador,Potência,ID Produto,Nome Produto,Quantidade
+11111,500,1001,Painel Solar 500 W Marca A,1
+11111,500,3001,Inversor 500W Marca D,1
+11111,500,2001,Controlador de Carga 30A Marca E,1
+11112,500,1002,Painel Solar 500 W Marca B,1
+11112,500,3001,Inversor 500W Marca D,1
+11112,500,2001,Controlador de Carga 30A Marca E,1
+11113,500,1003,Painel Solar 500 W Marca C,1
+11113,500,3001,Inversor 500W Marca D,1
+11113,500,2001,Controlador de Carga 30A Marca E,1
